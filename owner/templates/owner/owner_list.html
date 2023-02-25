@@ -1,22 +1,30 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LISTA DE USUARIOS</title>
-    <br/>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet"  type="text/css" href="{% static 'css/owner.css' %}">
+{% endblock css %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block content %}
+  <div class="ow-l-1">
     {% for owner in owners %}
-        <p>{{ owner.nombre }}</p>
+      {% if owner.edad > 18 %}
+        <p>Bienvenido Sr(a){{ owner.nombre }},
+          usted es <strong style="color: green">mayor de edad con {{ owner.edad }} años</strong>,
+          con Nacionalidad:{{ owner.nacionalidad }} </p>
+      {% else %}
+        <p>Lo sentimos Sr(a) {{ owner.nombre }},
+          pero es <strong style="color: red">menor de edad ya que tiene {{ owner.edad }} años</strong>;
+          tiene Nacionalidad:{{ owner.nacionalidad }}. </p>
+      {% endif %}
     {% endfor %}
+  </div>
+{% endblock content %}
 
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus error exercitationem id itaque libero ratione tempora voluptates? At culpa dolore iste natus numquam obcaecati officia saepe totam! Excepturi incidunt modi necessitatibus praesentium.</p>
-
-
-</head>
-<body>
-
-</body>
-</html>
+{% block scripts %}
+  <script src="{% static 'js/owner.js' %}"></script>
+{% endblock scripts %}
