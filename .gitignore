@@ -7,6 +7,12 @@
 *.pyc
 pokemon_home_cerseu/__pycache__/settings.cpython-310.pyc
 pokemon_home_cerseu/__pycache__/urls.cpython-310.pyc
+pokemon_home_cerseu/__pycache__/views.cpython-310.pyc
+owner/__pycache__/admin.cpython-310.pyc
+owner/__pycache__/models.cpython-310.pyc
+owner/__pycache__/urls.cpython-310.pyc
+owner/__pycache__/views.cpython-310.pyc
+owner/migrations/__pycache__/0001_initial.cpython-310.pyc
 __pycache__/
 local_settings.py
 db.sqlite3
