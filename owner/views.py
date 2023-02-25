@@ -1,6 +1,4 @@
 from django.shortcuts import render
-
-
 def owner(request):
   text = 'App Owner funcionando correctamente!!!'
   context = {
