@@ -10,9 +10,39 @@
 {% endblock title %}
 
 {% block content %}
-  <div class="ow-1">
-    <p>{{ text }}</p>
+<section>
+  <div class="container">
+    <div class="row">
+      <h3>Lista de Owner</h3>
+      <hr>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Edad</th>
+          <th scope="col">País</th>
+          <th scope="col">DNI</th>
+          <th scope="col">Vigente</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for li in lista %}
+        <tr>
+          <th scope="row">{{ li.id }}</th>
+          <td>{{li.nombre}}</td>
+          <td>{{li.edad}}</td>
+          <td>{{li.pais}}</td>
+          <td>{{li.dni}}</td>
+          <td>{{li.vigente}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
   </div>
+  <p>{{ text }}</p>
+</section>
 {% endblock content %}
 
 {% block scripts %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+<section>
+  <div class="container">
+    <div class="row">
+      <h3>Lista de Pokemon</h3>
+      <hr>
+      <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Generación</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for li in lista %}
+    <tr>
+      <th scope="row">{{ li.id }}</th>
+      <td>{{li.nombre}}</td>
+      <td>{{li.tipo}}</td>
+      <td>{{li.generacion}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+
+{% block scripts %}
+
+{% endblock scripts %}

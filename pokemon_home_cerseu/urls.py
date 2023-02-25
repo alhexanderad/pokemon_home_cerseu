@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='Inicio'),
     path('owner/', include('owner.urls')),
+    path('pokemon/', include('catalog.urls')),
 ]
